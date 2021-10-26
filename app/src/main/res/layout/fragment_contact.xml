@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_color"
+    android:focusableInTouchMode="true"
+    android:padding="@dimen/common_medium_margin"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/fragment_contact_sv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/searchview_rounded"
+            android:textCursorDrawable="@null"
+            app:iconifiedByDefault="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:iconifiedByDefault="false"
+            android:focusableInTouchMode="true"
+            app:queryHint="Search contacts"
+            android:layout_marginTop="@dimen/common_medium_margin"
+            app:queryBackground="@android:color/transparent"
+            />
+
+        <TextView
+            android:id="@+id/fragment_contact_tv_empty_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/fragment_contact_sv_search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/common_extra_large_margin"
+            android:text="@string/fragment_contact_empty_list"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            style="@style/TextAppearance.Title"
+            android:fromAlpha="0.0"
+            android:toAlpha="1.0"
+            android:duration="4500"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_contact_rv_contact"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/common_small_margin"
+            android:layout_marginBottom="@dimen/common_medium_margin"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_contact_sv_search"
+           />
+
+        <ProgressBar
+            android:id="@+id/fragment_contact_pb_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:indeterminateTint="@color/primary_color"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fragment_contact_extended_fab_new_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_medium_margin"
+        android:text="@string/fragment_contact_btn"
+        app:icon="@drawable/ic_baseline_add_24"
+        android:backgroundTint="@color/primary_color"
+        app:borderWidth="0dp"
+        app:iconTint="@color/white"
+        android:textColor="@color/white"
+        android:layout_gravity="bottom|end"
+        android:textAllCaps="false"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

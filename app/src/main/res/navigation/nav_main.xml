@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/nav_dest_home_fragment"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main">
+
+    <fragment
+        android:id="@+id/nav_dest_home_fragment"
+        android:name="com.tuval.barak.mycontacts.ui.ContactFragment"
+        tools:layout="@layout/fragment_contact">
+
+        <action
+            android:id="@+id/nav_action_add_contact_fragment"
+            app:destination="@id/nav_dest_add_contact_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_dest_add_contact_fragment"
+        android:name="com.tuval.barak.mycontacts.ui.EditOrCreateContactFragment"
+        tools:layout="@layout/fragment_add_or_update_contact" >
+
+
+        <argument
+            android:name="contact"
+            app:nullable="true"
+            android:defaultValue="@null"
+            app:argType="com.tuval.barak.mycontacts.models.Contact" />
+
+    </fragment>
+
+
+</navigation>

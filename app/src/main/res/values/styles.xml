@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.Title" parent="android:style/TextAppearance">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TextAppearance.RegularText" parent="android:style/TextAppearance">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/regular_text_size</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="ErrorTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@android:color/holo_orange_dark</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+    <style name="zeroSizeTextAppearance">
+        <item name="android:textSize">0sp</item>
+    </style>
+
+    <style name="TextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/hint</item>
+        <item name="android:background">@drawable/rounded_input</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeColor">@color/primary_color</item>
+        <item name="helperTextTextColor">@color/white</item>
+        <item name="hintTextColor">@color/white</item>
+        <item name="errorTextAppearance">@style/zeroSizeTextAppearance</item>
+        <item name="endIconTint">@color/primary_color</item>
+
+
+    </style>
+
+    <style name="TextInputEditText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:textCursorDrawable">@drawable/cursor</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+
+
+</resources>

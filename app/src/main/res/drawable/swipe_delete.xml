@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/error_or_delete"/>
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_baseline_delete_24"
+        android:gravity="start|center_vertical"
+        android:left="@dimen/common_medium_margin"/>
+</layer-list>

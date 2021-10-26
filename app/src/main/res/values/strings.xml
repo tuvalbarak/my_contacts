@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MyContacts</string>
+
+    <!-- ContactFragment Start -->
+    <string name="fragment_contact_btn">New Contact</string>
+    <string name="fragment_contact_empty_list">No Contacts Available</string>
+    <string name="contact_fragment_snackbar_action_text">undo</string>
+    <string name="contact_fragment_snackbar_message_text">has been deleted</string>
+    <!-- ContactFragment End -->
+
+    <!-- EditOrCreateContactFragment & ContactFragment Start -->
+    <string name="fragment_add_contact_first_name">First name</string>
+    <string name="fragment_add_contact_last_name">Last name</string>
+    <string name="fragment_add_contact_phone">Phone number</string>
+    <!-- EditOrCreateContactFragment & ContactFragment End -->
+
+    <!-- EditOrCreateContactFragment Start -->
+    <string name="fragment_add_contact_btn_create_contact">Create</string>
+    <string name="fragment_add_contact_btn_save_contact">Save</string>
+    <string name="fragment_add_contact_btn_cancel">Cancel</string>
+    <!-- EditOrCreateContactFragment End -->
+
+</resources>

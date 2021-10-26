@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="scroll_down_velocity">20</integer>
+    <integer name="scroll_up_velocity">-20</integer>
+    <integer name="at_the_top">-1</integer>
+    <integer name="disable_drag_and_drop">0</integer>
+
+
+</resources>
