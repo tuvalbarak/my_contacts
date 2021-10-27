@@ -30,8 +30,6 @@ class EditOrCreateContactFragment : BaseFragment() {
         ViewModelProvider(this, ViewModelFactory.create(requireContext())).get(ContactViewModel::class.java)
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         onEditContact()
         setupAddButtons()
