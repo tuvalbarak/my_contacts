@@ -7,9 +7,7 @@ import com.google.android.material.snackbar.Snackbar
 
 /**
  * @property snackbar - Already has been initialized in the Fragment/Activity (using make()).
- * @property backgroundColor - The Snackbar background color.
- * @property textColor - The Snackbar text color.
- * @property actionColor - The Snackbar action text color.
+ * @property actionText - The Snackbar action message.
  * @property actionFun - After clicking on the action text, this function will be invoked.
  */
 internal class CustomSnackbar(private val snackbar: Snackbar, actionText: String, actionFun: () -> Unit) {
