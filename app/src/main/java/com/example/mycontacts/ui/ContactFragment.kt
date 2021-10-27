@@ -260,52 +260,6 @@ class ContactFragment : BaseFragment() {
     }
 
     /**
-     * @param viewHolder - Current recyclerview item
-     * @param dX - Represents swipe direction
-     * @param c - The canvas the icon & background will be drown on
-     * This function is responsible for drawing the the edit/delete icons at the right placement (delete on the right, edit on the left).
-     * It also draws the background of the item(delete -> red, edit -> blue).
-     */
-    private fun drawBackgroundAndIcon(viewHolder: RecyclerView.ViewHolder, dX: Float, c: Canvas) {
-
-        //The icon is set to the delete icon is an arbitrary choice, it will be overridden while detecting the swipe direction.
-        var icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_delete_24)!!
-        val colorDrawableBackground: ColorDrawable
-
-        val itemView = viewHolder.itemView
-        val iconMarginVertical = (viewHolder.itemView.height - icon.intrinsicHeight) / 2 //Placing the icon at the middle
-
-        if (isSwipeRight(dX)) { //Swipe right -> edit
-            icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_edit_24)!! //Getting edit icon
-            colorDrawableBackground = ColorDrawable(resources.getColor(R.color.primary_color, null)) //Getting edit background
-            //Placing the background animation (while swiping right)
-            colorDrawableBackground.setBounds(itemView.left, itemView.top, dX.toInt(), itemView.bottom)
-            //Placing the icon at the left side of the item
-            icon.setBounds(itemView.left + iconMarginVertical, itemView.top + iconMarginVertical,
-                itemView.left + iconMarginVertical + icon.intrinsicWidth, itemView.bottom - iconMarginVertical)
-        } else { //Swipe left -> delete
-            icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_delete_24)!! //Getting delete icon
-            colorDrawableBackground = ColorDrawable(resources.getColor(R.color.error_or_delete, null)) //Getting delete background
-            //Placing the background animation (while swiping left)
-            colorDrawableBackground.setBounds(itemView.right + dX.toInt(), itemView.top, itemView.right, itemView.bottom)
-            //Placing the icon at the right side of the item
-            icon.setBounds(itemView.right - iconMarginVertical - icon.intrinsicWidth, itemView.top + iconMarginVertical,
-                itemView.right - iconMarginVertical, itemView.bottom - iconMarginVertical)
-        }
-
-        colorDrawableBackground.draw(c)
-        c.save()
-
-        if (isSwipeRight(dX)) //Swipe right -> edit
-            c.clipRect(itemView.left, itemView.top, dX.toInt(), itemView.bottom) //Setting bounds
-        else //Swipe left -> delete
-            c.clipRect(itemView.right + dX.toInt(), itemView.top, itemView.right, itemView.bottom) //Setting bounds
-
-        icon.draw(c)
-        c.restore()
-    }
-
-    /**
      * While swiping right, the value is greater than zero. While swiping left, the value is less than zero. If no swap has occurred,
      * the value is exactly zero.
      */
